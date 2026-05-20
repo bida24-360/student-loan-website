@@ -60,4 +60,3 @@ function typeEffect() {
     setTimeout(typeEffect, speed);
 }
 
-typeEffect();
