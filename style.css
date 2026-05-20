@@ -32,15 +32,12 @@ margin: 0 auto;
 }
 
 footer {
-background-color: #333;
-color: white;
-text-align: center;
-padding: 10px;
-position: fixed;
-bottom: 0;
-width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
 }
-
 img {
 border: 5px solid #4CAF50;
 border-radius: 10px;
@@ -71,5 +68,28 @@ body.dark-mode nav {
 @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: #4CAF50; }
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #198754;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #157347;
+    transform: scale(1.1);
 }
 
