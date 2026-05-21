@@ -93,3 +93,56 @@ body.dark-mode nav {
     transform: scale(1.1);
 }
 
+/* HERO BACKGROUND IMAGE */
+
+.hero-section {
+
+    background-image: url('images/Background.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+   min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+}
+
+/* DARK OVERLAY */
+
+.hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+/* CONTENT ABOVE OVERLAY */
+
+.hero-section .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
