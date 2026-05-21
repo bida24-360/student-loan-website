@@ -8,8 +8,10 @@ if (toggleButton) {
 
     // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
+
         document.body.classList.add('dark-mode');
         toggleButton.textContent = 'Light Mode';
+
     }
 
     toggleButton.addEventListener('click', function () {
@@ -17,11 +19,15 @@ if (toggleButton) {
         document.body.classList.toggle('dark-mode');
 
         if (document.body.classList.contains('dark-mode')) {
+
             toggleButton.textContent = 'Light Mode';
             localStorage.setItem('theme', 'dark');
+
         } else {
+
             toggleButton.textContent = 'Dark Mode';
             localStorage.setItem('theme', 'light');
+
         }
 
     });
@@ -52,6 +58,7 @@ if (typingElement) {
         const currentText = texts[textIndex];
 
         if (isDeleting) {
+
             typingElement.textContent =
                 currentText.substring(0, charIndex - 1);
 
@@ -63,27 +70,36 @@ if (typingElement) {
                 currentText.substring(0, charIndex + 1);
 
             charIndex++;
+
         }
 
+        // Pause before deleting
         if (!isDeleting && charIndex === currentText.length) {
 
             isDeleting = true;
+
             setTimeout(typeEffect, 1500);
+
             return;
         }
 
+        // Move to next text
         if (isDeleting && charIndex === 0) {
 
             isDeleting = false;
+
             textIndex = (textIndex + 1) % texts.length;
+
         }
 
         const speed = isDeleting ? 50 : 100;
 
         setTimeout(typeEffect, speed);
+
     }
 
     typeEffect();
+
 }
 
 // =======================
@@ -97,9 +113,13 @@ if (backToTopButton) {
     window.addEventListener('scroll', function () {
 
         if (window.scrollY > 300) {
+
             backToTopButton.style.display = 'block';
+
         } else {
+
             backToTopButton.style.display = 'none';
+
         }
 
     });
