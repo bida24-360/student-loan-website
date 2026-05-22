@@ -331,3 +331,157 @@ body.dark-mode nav {
     cursor: not-allowed;
 
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Hero section spacing */
+h1, h3 {
+    color: #2c3e50;
+}
+
+/* Stats boxes */
+.stats-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.stats-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Call-to-action section */
+.cta-section {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Buttons spacing */
+.btn {
+    border-radius: 8px;
+}
+
+/* =========================
+   GLOBAL TEXT FIX
+   ========================= */
+
+body {
+    color: #222; /* default readable dark text */
+    background-color: #f8f9fa;
+}
+
+/* Force readable text everywhere */
+p, h1, h2, h3, h4, h5, h6, li {
+    color: inherit;
+}
+
+/* Prevent Bootstrap from making text invisible in light sections */
+.bg-light, .border, .shadow-sm {
+    color: #222;
+}
+
+/* Keep navbar consistent */
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+/* Fix cards / boxes visibility */
+.border, .shadow-sm {
+    background-color: #ffffff;
+}
+
+/* =========================
+   ABOUT / CARDS STYLE CLEANUP
+   ========================= */
+
+.card, .p-3, .p-4 {
+    color: #222;
+}
+
+/* Stats boxes */
+.stats-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   STATS CARDS BASE STYLE
+   ========================= */
+
+.stats-card {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 12px;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Dark overlay so text stays visible */
+.stats-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* Text stays above image */
+.stats-card h2,
+.stats-card p {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* =========================
+   ROUTES BACKGROUND (ANIMATED)
+   ========================= */
+
+.routes-card {
+    background: url("images/routes-bg.png");
+    background-size: cover;
+    background-position: center;
+    animation: moveBg 12s infinite alternate ease-in-out;
+}
+
+/* slow animation effect */
+@keyframes moveBg {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+/* =========================
+   CITIES CARD BACKGROUND
+   ========================= */
+
+.cities-card {
+    background: url("images/gaborone.png"),
+                url("images/francistown.png"),
+                url("images/maun.png"),
+                url("images/kasane.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   TRAVELLERS CARD BACKGROUND
+   ========================= */
+
+.travellers-card {
+    background: url("images/happy-travellers.png");
+    background-size: cover;
+    background-position: center;
+}
