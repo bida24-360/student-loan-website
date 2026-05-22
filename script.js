@@ -134,3 +134,84 @@ if (backToTopButton) {
     });
 
 }
+
+// =======================
+// AUTO-FILL BOOKING FORM
+// =======================
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const from = urlParams.get('from');
+const to = urlParams.get('to');
+
+const departureSelect = document.getElementById('departure');
+const destinationSelect = document.getElementById('destination');
+
+if (departureSelect && destinationSelect) {
+
+    if (from) {
+        departureSelect.value = from;
+    }
+
+    if (to) {
+        destinationSelect.value = to;
+    }
+
+}
+
+// =======================
+// SEAT SELECTION + TOTAL PRICE
+// =======================
+
+const seats =
+    document.querySelectorAll('.seat:not(.occupied)');
+
+const selectedSeatsText =
+    document.getElementById('selected-seats');
+
+const seatNumbersText =
+    document.getElementById('seat-numbers');
+
+const totalPriceText =
+    document.getElementById('total-price');
+
+const seatPrice = 250;
+
+let selectedSeats = [];
+
+seats.forEach(seat => {
+
+    seat.addEventListener('click', () => {
+
+        seat.classList.toggle('selected');
+
+        const seatNumber =
+            seat.textContent.trim();
+
+        if (selectedSeats.includes(seatNumber)) {
+
+            selectedSeats =
+                selectedSeats.filter(
+                    s => s !== seatNumber
+                );
+
+        } else {
+
+            selectedSeats.push(seatNumber);
+
+        }
+
+        // UPDATE TOTALS
+
+        selectedSeatsText.textContent =
+            selectedSeats.length;
+
+        seatNumbersText.textContent =
+            selectedSeats.join(', ') || 'None';
+
+        totalPriceText.textContent =
+            selectedSeats.length * seatPrice;
+
+    });
+
+});
